@@ -7,10 +7,6 @@ const ingredients = [
   "Condiments",
 ];
 
-const newIngredientsList = [...ingredients];
-const productsEl = document.querySelector(".ingredients");
-
-productsEl.forEach(function (elem) {
-  const liEl = document.createElement("li");
-  liEl.textContent = elem;
-});
+const ulEl = document.querySelector("#ingredients");
+const list = ingredients.reduce((str, elem) => str + `<li>${elem}</li>`, "");
+ulEl.innerHTML = list;
